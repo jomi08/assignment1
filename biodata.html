@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Biodata</title>
+    <style>
+       
+       
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(97, 97, 132, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+        }
+
+        .employee-selection {
+            margin-bottom: 20px;
+        }
+
+        .employee-selection label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .employee-selection select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(0, 123, 255, 0.5);
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .employee-selection select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .biodata {
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            display: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .biodata h3 {
+            margin-top: 0;
+            color: rgba(0, 123, 255, 0.9);
+        }
+
+        .biodata p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            background: linear-gradient(to right, #007BFF, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #0056b3, #003f7f);
+            transform: scale(1.05);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Biodata</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="biodata.html">Bio-Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="employee-selection">
+            <label for="employeeSelect">Select Employee:</label>
+            <select id="employeeSelect">
+                <option value="" disabled selected>----CLICK HERE TO CHOOSE----</option>
+                <option value="1">M Jomi Maria Sijo</option>
+                <option value="2">Annie Jaison JS</option>
+                <option value="3">Himashree S</option>
+                <option value="4">Aman</option>
+                <option value="5">Harshit</option>
+                <option value="6">Kumar Ayush</option>
+            </select>
+        </div>
+
+        <div id="biodata" class="biodata">
+            <h3 id="employeeName"></h3>
+            <p><strong>Position:</strong> <span id="employeePosition"></span></p>
+            <p><strong>Age:</strong> <span id="employeeAge"></span></p>
+            <p><strong>Gender:</strong> <span id="employeeGender"></span></p>
+            <p><strong>Phone:</strong> <span id="employeePhone"></span></p>
+            <p><strong>Email:</strong> <span id="employeeEmail"></span></p>
+            <p><strong>LinkedIn:</strong> <a id="employeeLinkDin" href="#" target="_blank">View Profile</a></p>
+            <p><strong>Language:</strong> <span id="employeeLang"></span></p>
+            <p><strong>Tech Skills:</strong> <span id="employeeTechSkill"></span></p>
+            <p><strong>Soft Skills:</strong> <span id="employeeSoftSkill"></span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const employees = {
+            1: {
+                name: "M Jomi Maria Sijo",
+                position: "Developer",
+                age: 20,
+                gender: "Female",
+                phone: "9972211XXX",
+                email: "jomimariasijo@gmail.com",
+                linkDin: "https://www.linkedin.com/in/m-jomi-maria-sijo-545bb6305",
+                lang: "English, Hindi, Kannada, Malayalam",
+                techSkill: "C, Java, Python, SQL, Windows OS, Database Management",
+                softSkill: "Good verbal communication, writing skills, Good Speaker"
+            },
+            2: {
+                name: "Annie Jaison JS",
+                position: "Developer",
+                age: 21,
+                gender: "Female",
+                phone: "8050501XXX",
+                email: "anniejasonjs@gmail.com",
+                linkDin: "https://www.linkedin.com/in/annie-j-8198782b4",
+                lang: "English, Tamil, Kannada, Malayalam",
+                techSkill: "C, Java, Python, Live Olympiad",
+                softSkill: "Good verbal communication, writing skills, Essay writing"
+            },
+            3: {
+                name: "Himashree S",
+                position: "Developer",
+                age: 21,
+                gender: "Female",
+                phone: "6363646XXX",
+                email: "himashreeshetty@gmail.com",
+                linkDin: "https://www.linkedin.com/in/himu-j-653165c",
+                lang: "English, Kannada",
+                techSkill: "C, Java, Python",
+                softSkill: "Good verbal communication, writing skills"
+            },
+            4: {
+                name: "Aman",
+                position: "Developer",
+                age: 21,
+                gender: "Male",
+                phone: "8541915XXX",
+                email: "amanraj89969@gmail.com",
+                linkDin: "https://www.linkedin.com/in/aman-83169b204",
+                lang: "English, Hindi",
+                techSkill: "C, Java, Python, SQL",
+                softSkill: "Good verbal communication, writing skills, Fast learner"
+            },
+            5: {
+                name: "Harshit Mohanty",
+                position: "Web Developer",
+                age: 20,
+                gender: "Male",
+                phone: "8969353XXX",
+                email: "mohantyharshit@gmail.com",
+                linkDin: "https://www.linkedin.com/in/harshit-mohanty-1100871a0",
+                lang: "English, Hindi",
+                techSkill: "Java, Web3.js, JavaScript, React JS, Solidity, Web Development, Blockchain Development",
+                softSkill: "Good verbal communication, writing skills"
+            },
+            6: {
+                name: "Kumar Ayush",
+                position: "Developer",
+                age: 20,
+                gender: "Male",
+                phone: "6205895XXX",
+                email: "kumarayush@gmail.com",
+                linkDin: "https://www.linkedin.com/in/kumar-ayush-18-infernoi",
+                lang: "English, Hindi",
+                techSkill: "Linux CLI, Python automation, File Parsing",
+                softSkill: "Communication skills, Project Management, Critical Thinking"
+            }
+        };
+
+        const employeeSelect = document.getElementById("employeeSelect");
+        const biodataDiv = document.getElementById("biodata");
+        const employeeName = document.getElementById("employeeName");
+        const employeePosition = document.getElementById("employeePosition");
+        const employeeAge = document.getElementById("employeeAge");
+        const employeeGender = document.getElementById("employeeGender");
+        const employeePhone = document.getElementById("employeePhone");
+        const employeeEmail = document.getElementById("employeeEmail");
+        const employeeLinkDin = document.getElementById("employeeLinkDin");
+        const employeeLang = document.getElementById("employeeLang");
+        const employeeTechSkill = document.getElementById("employeeTechSkill");
+        const employeeSoftSkill = document.getElementById("employeeSoftSkill");
+
+        employeeSelect.addEventListener("change", function () {
+            const selectedId = this.value;
+
+            if (selectedId) {
+                const employee = employees[selectedId];
+                employeeName.textContent = employee.name;
+                employeePosition.textContent = employee.position;
+                employeeAge.textContent = employee.age;
+                employeeGender.textContent = employee.gender;
+                employeePhone.textContent = employee.phone;
+                employeeEmail.textContent = employee.email;
+                employeeLinkDin.href = employee.linkDin;
+                employeeLang.textContent = employee.lang;
+                employeeTechSkill.textContent = employee.techSkill;
+                employeeSoftSkill.textContent = employee.softSkill;
+
+                biodataDiv.style.display = "block";
+            } else {
+                biodataDiv.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+

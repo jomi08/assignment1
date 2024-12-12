@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Resume - My Website</title>
+    
+</head>
+<body>
+    <header>
+        <h1>My Resume</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="biodata.html">Bio-Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <label for="nameSelector">Select Name:</label>
+        <select id="nameSelector" onchange="updateResume()">
+        
+            <option value="jo resume-4.pdf">M Jomi Maria Sijo</option>
+            <option value="Resume.pdf">Annie Jaison JS</option>
+            <option value="himares.pdf">Himashree S</option>
+            <option value="Resumeee.pdf">Aman</option>
+            <option value="harshitres.pdf">Harshit</option>
+            <option value="kares.pdf">Kumar Ayush</option>
+        </select>
+
+        <div id="resumeContent">
+            <iframe id="resumeViewer" src=""></iframe>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Company name.All rights reserved</p>
+    </footer>
+
+    <script>
+        function updateResume() {
+            const selectedLink = document.getElementById('nameSelector').value;
+            const iframe = document.getElementById('resumeViewer');
+            if (selectedLink) {
+                iframe.src = selectedLink;
+            } else {
+                iframe.src = ""; // Clears iframe if no option is selected
+            }
+        }
+
+        // Initialize with the first option (if desired)
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('nameSelector').selectedIndex = 0;
+            updateResume();
+        });
+    </script>
+</body>
+</html>
